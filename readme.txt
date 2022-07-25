@@ -19,7 +19,9 @@ I'll be documenting :
          sip_custom.conf
          extensions_custom.conf
       Note: FreePBX's Asterisk configuration files has
-            'include'-s for these files.uly-2022
+            'include'-s for these files. 
+
+July-2022
 raspbx-11-11-2019, Asterisk 16.6.1 & FreePBX 15.0.16.22
 
 InTRANET only. If you hook this to the inTERnet, you're
@@ -54,7 +56,3 @@ Directory
 └── webpareges                        Alex's webpages before he removed them from the web
     └── *There are 5 webpages stored here*
     └── Order.txt                        Order of the html web pages
-
-
-
-
