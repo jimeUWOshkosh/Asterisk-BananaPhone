@@ -1,0 +1,5 @@
+CLI> sip show peers
+Name/username             Host                                    Dyn Forcerport Comedia    ACL Port     Status      Description
+PhoneHandset/PhoneHandset 192.168.0.20                             D  Yes        Yes            5060     Unmonitored
+PhoneLine/PhoneLine       192.168.0.20                             D  Yes        Yes            5061     OK (3 ms)
+2 sip peers [Monitored: 1 online, 0 offline Unmonitored: 1 online, 0 offline]
