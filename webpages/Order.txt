@@ -1,0 +1,6 @@
+1 Laying groundwork — Arctangent.io.html
+2 Initial Asterisk configuration — Arctangent.io.html
+3 Obi110 ATA settings — Arctangent.io.html
+4 Dialplan basics — Arctangent.io.html
+5 Integrate Banana Phone scripts — Arctangent.io.html 
+

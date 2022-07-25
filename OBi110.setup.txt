@@ -1,0 +1,94 @@
+You can verify all this typing the web pages saved off in the webpages directory.
+And the pages have screen captures too of the Obi110 interface!!
+Yes, I download loaded them so I didn't have to hooked to the internet.
+Good thing, Mr Ruiz took them down a while back
+
+System Management
+   Auto Provisioning
+      Auto Provisioning
+         Method-> Diabled
+       ->Submit<-
+   Network Settings
+      Internet Settings
+         AddressingType	Static
+         IPAddress      IP Address of your OBi110
+         SubnetMask	255.255.255.0
+         DefaultGateway IP Address of your RPi
+         DNSServer1     IP Address of your RPi
+       ->Submit<-
+
+Service Providers:
+   ITSP Profile A:
+      General:
+         General:
+          Uncheck defaults and enter the following:
+            DigitMap:  (911S0|1xxxxxxxxxxS0|011xx.S2|xx.S2|xS2|xxS2|*X.S2|(Mipd)|[^*#]@@.)
+            DTMFMode: InBand
+          ->Submit<-
+
+Service Providers:
+   ITSP Profile A:
+      SIP:
+         SIP:
+          Uncheck defaults and enter the following:
+            Proxy Server:   IP Address of the Asterisk RPi server
+            X_UseRefer:     Checked
+            X_MWISubscribe: Checked
+          ->Submit<-
+
+Voice Services:
+   SP1 Service:
+      SP1 Service:
+       Uncheck defaults and enter the following:
+         X_ServProvProfile:   A - sometimes this is the default, if just leave it
+         AuthUserName:        PhoneHandset
+         AuthPassword:        the "secret" value we set in sip.conf for the PhoneHandset endpoint
+         MaxSessions:         10
+         MWIEnable:           Checked
+         X_VMWIEnable:        Checked
+         MessageWaiting:      Unchecked, but undefaulted
+       ->Submit<-
+
+
+Voice Services:
+   SP2 Service:
+      SP2 Service:
+       Uncheck defaults and enter the following:
+         X_ServProvProfile:  B
+         X_InboundCallRoute: LI
+         AuthUserName:       PhoneLine
+         AuthPassword:       the "secret" value we set in sip.conf for the PhoneLine endpoint
+       ->Submit<-
+
+Physical Interfaces:
+   Phone Port
+    Uncheck defaults and enter the following:
+      Primary Line:     SP1 Service
+      StarCodeProfile:  None
+    ->Submit<-
+
+Service Providers
+   ITSP Profile B
+      General
+       Uncheck defaults and enter the following:
+         DTMFMethod: InBand
+       ->Submit<-
+
+Service Providers
+   ITSP Profile B
+      SIP
+       Uncheck defaults and enter the following:
+         Proxy Server:    IP address of RPi Asterisk server
+         X_SpoofCallerID: Checked
+         X_AccessList:    IP address of RPi Asterisk server
+       ->Submit<-
+
+Physical Interfaces:
+   Line Port:
+      Line Port
+       Uncheck defaults and enter the following:
+         InboundCallRoute:  SP2(5555555555) - replace 5s with phone number of the line attached to the Obi ATA
+         RingDelay:  3500
+       ->Submit<-
+
+->Reboot<-

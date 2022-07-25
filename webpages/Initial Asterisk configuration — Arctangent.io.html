@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://www.arctangent.io/initial-asterisk-configuration -->
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:website="http://ogp.me/ns/website" lang="en-US" itemscope="" itemtype="http://schema.org/WebPage" class="yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-proximanova-n3-active wf-proximanova-n4-active wf-proximanova-n1-active wf-proximanova-i1-active wf-proximanova-i3-active wf-proximanova-i4-active wf-proximanova-n5-active wf-proximanova-i5-active wf-proximanova-n6-active wf-proximanova-i6-active wf-proximanova-n7-active wf-proximanova-i7-active wf-proximanova-n8-active wf-proximanova-i8-active wf-proximanova-n9-active wf-proximanova-i9-active wf-active" style=""><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important"></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <meta name="viewport" content="initial-scale=1">
+  
+  <!-- This is Squarespace. --><!-- alex-ruiz-7fpx -->
+<!--<base href="">--><base href=".">
+
+<title>Initial Asterisk configuration — Arctangent.io</title>
+<link rel="shortcut icon" type="image/x-icon" href="https://static1.squarespace.com/static/583dc6b829687f52b54693f1/t/58fff80662a431db04c7f3b3/favicon.ico">
+<link rel="canonical" href="https://www.arctangent.io/initial-asterisk-configuration/">
+<meta property="og:site_name" content="Arctangent.io">
+<meta property="og:title" content="Initial Asterisk configuration — Arctangent.io">
+<meta property="og:url" content="https://www.arctangent.io/initial-asterisk-configuration/">
+<meta property="og:type" content="website">
+<meta itemprop="name" content="Initial Asterisk configuration — Arctangent.io">
+<meta itemprop="url" content="https://www.arctangent.io/initial-asterisk-configuration/">
+<meta name="twitter:title" content="Initial Asterisk configuration — Arctangent.io">
+<meta name="twitter:url" content="https://www.arctangent.io/initial-asterisk-configuration/">
+<meta name="twitter:card" content="summary">
+<meta name="description" content="">
+<script type="text/javascript" src="./Initial Asterisk configuration — Arctangent.io_files/M24sYhZ45gHKuOXK8YuA64RcYJB5_sADHpHKoui_gfJfezCffFHN4UJLFRbh52jhWD9twhsRFcJtwRqh52icFQ4KFQbh5QFcws7wMPG0jAU8pfukiA8EOQicSY60SaBujW48Sagyjh90jhNlOeBCZW6lS1mTpKXaZ1gtO1FUiABkZWF3jAF8OcFzdPUyScFXjAo1ZAoXOc8zOeUzjhBC-eNDifUaiaS0jAU8pfukiA8EOQicSY60SaBujW48.js"></script>
+<style type="text/css">@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/ed0e78/00000000000000003b9b0931/27/l?subset_id=2&fvd=n1&v=3) format("woff2"),url(https://use.typekit.net/af/ed0e78/00000000000000003b9b0931/27/d?subset_id=2&fvd=n1&v=3) format("woff"),url(https://use.typekit.net/af/ed0e78/00000000000000003b9b0931/27/a?subset_id=2&fvd=n1&v=3) format("opentype");font-weight:100;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/942fe1/00000000000000003b9b0930/27/l?subset_id=2&fvd=i1&v=3) format("woff2"),url(https://use.typekit.net/af/942fe1/00000000000000003b9b0930/27/d?subset_id=2&fvd=i1&v=3) format("woff"),url(https://use.typekit.net/af/942fe1/00000000000000003b9b0930/27/a?subset_id=2&fvd=i1&v=3) format("opentype");font-weight:100;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/437c3d/00000000000000003b9b0932/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/437c3d/00000000000000003b9b0932/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/437c3d/00000000000000003b9b0932/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/f02b29/00000000000000003b9b0933/27/l?subset_id=2&fvd=i3&v=3) format("woff2"),url(https://use.typekit.net/af/f02b29/00000000000000003b9b0933/27/d?subset_id=2&fvd=i3&v=3) format("woff"),url(https://use.typekit.net/af/f02b29/00000000000000003b9b0933/27/a?subset_id=2&fvd=i3&v=3) format("opentype");font-weight:300;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/6aec08/00000000000000003b9b0935/27/l?subset_id=2&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/6aec08/00000000000000003b9b0935/27/d?subset_id=2&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/6aec08/00000000000000003b9b0935/27/a?subset_id=2&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/3331e6/00000000000000003b9b0936/27/l?subset_id=2&fvd=n5&v=3) format("woff2"),url(https://use.typekit.net/af/3331e6/00000000000000003b9b0936/27/d?subset_id=2&fvd=n5&v=3) format("woff"),url(https://use.typekit.net/af/3331e6/00000000000000003b9b0936/27/a?subset_id=2&fvd=n5&v=3) format("opentype");font-weight:500;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/1cd3b2/00000000000000003b9b0937/27/l?subset_id=2&fvd=i5&v=3) format("woff2"),url(https://use.typekit.net/af/1cd3b2/00000000000000003b9b0937/27/d?subset_id=2&fvd=i5&v=3) format("woff"),url(https://use.typekit.net/af/1cd3b2/00000000000000003b9b0937/27/a?subset_id=2&fvd=i5&v=3) format("opentype");font-weight:500;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/l?subset_id=2&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/d?subset_id=2&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/a?subset_id=2&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/256534/00000000000000003b9b0938/27/l?subset_id=2&fvd=i6&v=3) format("woff2"),url(https://use.typekit.net/af/256534/00000000000000003b9b0938/27/d?subset_id=2&fvd=i6&v=3) format("woff"),url(https://use.typekit.net/af/256534/00000000000000003b9b0938/27/a?subset_id=2&fvd=i6&v=3) format("opentype");font-weight:600;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/86b539/00000000000000003b9b093a/27/l?subset_id=2&fvd=i7&v=3) format("woff2"),url(https://use.typekit.net/af/86b539/00000000000000003b9b093a/27/d?subset_id=2&fvd=i7&v=3) format("woff"),url(https://use.typekit.net/af/86b539/00000000000000003b9b093a/27/a?subset_id=2&fvd=i7&v=3) format("opentype");font-weight:700;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/l?subset_id=2&fvd=n8&v=3) format("woff2"),url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/d?subset_id=2&fvd=n8&v=3) format("woff"),url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/a?subset_id=2&fvd=n8&v=3) format("opentype");font-weight:800;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/e85210/00000000000000003b9b093d/27/l?subset_id=2&fvd=i8&v=3) format("woff2"),url(https://use.typekit.net/af/e85210/00000000000000003b9b093d/27/d?subset_id=2&fvd=i8&v=3) format("woff"),url(https://use.typekit.net/af/e85210/00000000000000003b9b093d/27/a?subset_id=2&fvd=i8&v=3) format("opentype");font-weight:800;font-style:italic;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/l?subset_id=2&fvd=n9&v=3) format("woff2"),url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/d?subset_id=2&fvd=n9&v=3) format("woff"),url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/a?subset_id=2&fvd=n9&v=3) format("opentype");font-weight:900;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/8b7167/00000000000000003b9b093e/27/l?subset_id=2&fvd=i9&v=3) format("woff2"),url(https://use.typekit.net/af/8b7167/00000000000000003b9b093e/27/d?subset_id=2&fvd=i9&v=3) format("woff"),url(https://use.typekit.net/af/8b7167/00000000000000003b9b093e/27/a?subset_id=2&fvd=i9&v=3) format("opentype");font-weight:900;font-style:italic;}</style><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<link rel="stylesheet" type="text/css" href="./Initial Asterisk configuration — Arctangent.io_files/css">
+<script type="text/javascript">SQUARESPACE_ROLLUPS = {};</script>
+<script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//static.squarespace.com/universal/scripts-compressed/common-a5b8c446f63325ada241-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common');</script>
+<script crossorigin="anonymous" src="./Initial Asterisk configuration — Arctangent.io_files/common-a5b8c446f63325ada241-min.en-US.js"></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//static.squarespace.com/universal/scripts-compressed/commerce-3efce416b0d0551420d7-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-commerce');</script>
+<script crossorigin="anonymous" src="./Initial Asterisk configuration — Arctangent.io_files/commerce-3efce416b0d0551420d7-min.en-US.js"></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].css = ["//static.squarespace.com/universal/styles-compressed/commerce-3cf2dee12bb4759d736dea53e6c346aa-min.css"]; })(SQUARESPACE_ROLLUPS, 'squarespace-commerce');</script>
+<link rel="stylesheet" type="text/css" href="./Initial Asterisk configuration — Arctangent.io_files/commerce-3cf2dee12bb4759d736dea53e6c346aa-min.css"><script crossorigin="anonymous" src="./Initial Asterisk configuration — Arctangent.io_files/performance-9a584ae1b5ee39af2e98-min.en-US.js" defer=""></script><script data-name="static-context">Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {"facebookAppId":"314192535267336","rollups":{"squarespace-announcement-bar":{"css":"//static.squarespace.com/universal/styles-compressed/announcement-bar-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/announcement-bar-8dac5ea8db9ee2f1a64f-min.en-US.js"},"squarespace-audio-player":{"css":"//static.squarespace.com/universal/styles-compressed/audio-player-a57b8f3aa31918104f57a068648fbc63-min.css","js":"//static.squarespace.com/universal/scripts-compressed/audio-player-a98fd9ca7c506637848f-min.en-US.js"},"squarespace-blog-collection-list":{"css":"//static.squarespace.com/universal/styles-compressed/blog-collection-list-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/blog-collection-list-41b7317d14ee3981fa0b-min.en-US.js"},"squarespace-calendar-block-renderer":{"css":"//static.squarespace.com/universal/styles-compressed/calendar-block-renderer-9acef2d24c6a994fca1a8a82e99e19c3-min.css","js":"//static.squarespace.com/universal/scripts-compressed/calendar-block-renderer-949a97803f43b64a6a1c-min.en-US.js"},"squarespace-chartjs-helpers":{"css":"//static.squarespace.com/universal/styles-compressed/chartjs-helpers-9935a41d63cf08ca108505d288c1712e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/chartjs-helpers-441567548b33178df40c-min.en-US.js"},"squarespace-comments":{"css":"//static.squarespace.com/universal/styles-compressed/comments-a7b26c9ae88684f76d210b61d0b0d848-min.css","js":"//static.squarespace.com/universal/scripts-compressed/comments-bc32d6345bffce234c36-min.en-US.js"},"squarespace-commerce-cart":{"js":"//static.squarespace.com/universal/scripts-compressed/commerce-cart-e49362b1601c7acfec8d-min.en-US.js"},"squarespace-dialog":{"css":"//static.squarespace.com/universal/styles-compressed/dialog-7ba230f290b5d21d9871eb06db23b5c9-min.css","js":"//static.squarespace.com/universal/scripts-compressed/dialog-30f662aeac6cfddf98da-min.en-US.js"},"squarespace-events-collection":{"css":"//static.squarespace.com/universal/styles-compressed/events-collection-9acef2d24c6a994fca1a8a82e99e19c3-min.css","js":"//static.squarespace.com/universal/scripts-compressed/events-collection-87426780aab2f3338afc-min.en-US.js"},"squarespace-form-rendering-utils":{"js":"//static.squarespace.com/universal/scripts-compressed/form-rendering-utils-da3eeda5a5cdbbbe32a5-min.en-US.js"},"squarespace-forms":{"css":"//static.squarespace.com/universal/styles-compressed/forms-ac7917c174031c937e3df4b3a2005b34-min.css","js":"//static.squarespace.com/universal/scripts-compressed/forms-32e6c8cfcc179803a2ae-min.en-US.js"},"squarespace-gallery-collection-list":{"css":"//static.squarespace.com/universal/styles-compressed/gallery-collection-list-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/gallery-collection-list-80e3ad4a928d8aed2507-min.en-US.js"},"squarespace-image-zoom":{"css":"//static.squarespace.com/universal/styles-compressed/image-zoom-72b0ab7796582588032aa6472e2e2f14-min.css","js":"//static.squarespace.com/universal/scripts-compressed/image-zoom-364b50d4f9aba0a21163-min.en-US.js"},"squarespace-pinterest":{"css":"//static.squarespace.com/universal/styles-compressed/pinterest-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/pinterest-1982ed2776a633ac6140-min.en-US.js"},"squarespace-popup-overlay":{"css":"//static.squarespace.com/universal/styles-compressed/popup-overlay-7b48efeab9b323dfdb524a256cf61595-min.css","js":"//static.squarespace.com/universal/scripts-compressed/popup-overlay-d1dc8411aea4b2d0b72b-min.en-US.js"},"squarespace-product-quick-view":{"css":"//static.squarespace.com/universal/styles-compressed/product-quick-view-bc8694b75a40e4bd969b662b80ebafb5-min.css","js":"//static.squarespace.com/universal/scripts-compressed/product-quick-view-bdd8cfffe173df8dfbae-min.en-US.js"},"squarespace-products-collection-item-v2":{"css":"//static.squarespace.com/universal/styles-compressed/products-collection-item-v2-72b0ab7796582588032aa6472e2e2f14-min.css","js":"//static.squarespace.com/universal/scripts-compressed/products-collection-item-v2-a6a32a04d13edb0a888f-min.en-US.js"},"squarespace-products-collection-list-v2":{"css":"//static.squarespace.com/universal/styles-compressed/products-collection-list-v2-72b0ab7796582588032aa6472e2e2f14-min.css","js":"//static.squarespace.com/universal/scripts-compressed/products-collection-list-v2-ac09cb918b138c11b6c8-min.en-US.js"},"squarespace-search-page":{"css":"//static.squarespace.com/universal/styles-compressed/search-page-ea3e98edb84abbc5e758884f69149027-min.css","js":"//static.squarespace.com/universal/scripts-compressed/search-page-b5175865491ea3c87447-min.en-US.js"},"squarespace-search-preview":{"js":"//static.squarespace.com/universal/scripts-compressed/search-preview-a7aa862cd423ac1991ad-min.en-US.js"},"squarespace-share-buttons":{"js":"//static.squarespace.com/universal/scripts-compressed/share-buttons-6b32919028926b43f0a8-min.en-US.js"},"squarespace-simple-liking":{"css":"//static.squarespace.com/universal/styles-compressed/simple-liking-310d0b18e112f708f91339b11fd55714-min.css","js":"//static.squarespace.com/universal/scripts-compressed/simple-liking-92605f7ba9ea6bcaf673-min.en-US.js"},"squarespace-social-buttons":{"css":"//static.squarespace.com/universal/styles-compressed/social-buttons-26106f808f7e9c739a7f862a408ed039-min.css","js":"//static.squarespace.com/universal/scripts-compressed/social-buttons-3c936e7bbb34d54c3cfc-min.en-US.js"},"squarespace-tourdates":{"css":"//static.squarespace.com/universal/styles-compressed/tourdates-d41d8cd98f00b204e9800998ecf8427e-min.css","js":"//static.squarespace.com/universal/scripts-compressed/tourdates-606469b17ba69a9b693e-min.en-US.js"},"squarespace-website-overlays-manager":{"css":"//static.squarespace.com/universal/styles-compressed/website-overlays-manager-df9cddfe3eca22764d10fd6fc4f4ad73-min.css","js":"//static.squarespace.com/universal/scripts-compressed/website-overlays-manager-36f38e521a77126f3760-min.en-US.js"}},"pageType":2,"website":{"id":"583dc6b829687f52b54693f1","identifier":"alex-ruiz-7fpx","websiteType":1,"contentModifiedOn":1493003659083,"cloneable":false,"siteStatus":{},"language":"en-US","timeZone":"America/Los_Angeles","machineTimeZoneOffset":-28800000,"timeZoneOffset":-28800000,"timeZoneAbbr":"PST","siteTitle":"Arctangent.io","fullSiteTitle":"Initial Asterisk configuration \u2014 Arctangent.io","siteTagLine":"","siteDescription":"","logoImageId":"583e7981d1758e46ff3ea301","shareButtonOptions":{"6":true,"8":true,"1":true,"7":true,"3":true,"5":true,"4":true},"logoImageUrl":"//static1.squarespace.com/static/583dc6b829687f52b54693f1/t/583e7981d1758e46ff3ea301/1493003659083/","authenticUrl":"https://www.arctangent.io","internalUrl":"https://alex-ruiz-7fpx.squarespace.com","baseUrl":"https://www.arctangent.io","primaryDomain":"www.arctangent.io","sslSetting":3,"socialAccounts":[{"serviceId":2,"userId":"1280898078611932","screenname":"Alex Ruiz","addedOn":1486425640746,"profileUrl":"https://www.facebook.com/276074649187125","iconUrl":"http://graph.facebook.com/1280898078611932/picture?type=square","metaData":{"service":"facebook"},"iconEnabled":true,"serviceName":"facebook"}],"typekitId":"","statsMigrated":false,"imageMetadataProcessingEnabled":false,"screenshotId":"daeda4c1","showOwnerLogin":false},"websiteSettings":{"id":"583dc6b829687f52b54693f3","websiteId":"583dc6b829687f52b54693f1","type":"Personal","subjects":[],"country":"US","state":"CA","simpleLikingEnabled":true,"mobileInfoBarSettings":{"style":1,"isContactEmailEnabled":false,"isContactPhoneNumberEnabled":false,"isLocationEnabled":false,"isBusinessHoursEnabled":false},"announcementBarSettings":{"style":1,"text":"<p><strong>Sign up to get project updates!</strong></p>","clickthroughUrl":{"url":"http://eepurl.com/cAAmCL","newWindow":false}},"commentLikesAllowed":true,"commentAnonAllowed":true,"commentThreaded":true,"commentApprovalRequired":false,"commentAvatarsOn":true,"commentSortType":2,"commentFlagThreshold":0,"commentFlagsAllowed":true,"commentEnableByDefault":true,"commentDisableAfterDaysDefault":0,"disqusShortname":"","commentsEnabled":true,"contactPhoneNumber":"","storeSettings":{"returnPolicy":null,"termsOfService":null,"privacyPolicy":null,"paymentSettings":{"stripeLivePublicApiKey":"pk_live_pGkV2ie3jk9H3lUgZSV8ihXm","stripeTestPublicApiKey":"pk_test_pIqYbJfDwvz0lLwqzqcsXNxM","stripeUserId":"acct_19ivPEKNSjMTkklF","stripeAccountCountry":"US"},"expressCheckout":false,"continueShoppingLinkUrl":"/","useLightCart":false,"showNoteField":false,"shippingCountryDefaultValue":"US","billToShippingDefaultValue":false,"showShippingPhoneNumber":true,"isShippingPhoneRequired":false,"showBillingPhoneNumber":true,"isBillingPhoneRequired":false,"multipleQuantityAllowedForServices":true,"currenciesSupported":["USD","AUD","CAD","CHF","DKK","EUR","GBP","HKD","MXN","NOK","NZD","SEK","SGD"],"defaultCurrency":"USD","selectedCurrency":"USD","measurementStandard":1,"showCustomCheckoutForm":false,"enableMailingListOptInByDefault":false,"sameAsRetailLocation":false,"isLive":true},"useEscapeKeyToLogin":true,"ssBadgeType":1,"ssBadgePosition":4,"ssBadgeVisibility":1,"ssBadgeDevices":1,"pinterestOverlayOptions":{"mode":"disabled"},"ampEnabled":false},"cookieSettings":{"isCookieBannerEnabled":false,"isRestrictiveCookiePolicyEnabled":false,"isRestrictiveCookiePolicyAbsolute":false,"cookieBannerText":"","cookieBannerTheme":"","cookieBannerVariant":"","cookieBannerPosition":"","cookieBannerCtaVariant":"","cookieBannerCtaText":""},"websiteCloneable":false,"collection":{"title":"Initial Asterisk configuration","id":"588b03839f7456789fc077b7","fullUrl":"/initial-asterisk-configuration/","type":10},"subscribed":false,"appDomain":"squarespace.com","templateTweakable":true,"tweakJSON":{"outerPadding":"100px","pagePadding":"29px","product-gallery-auto-crop":"true","product-image-auto-crop":"false","topPadding":"80px"},"templateId":"50521cf884aeb45fa5cfdb80","pageFeatures":[1,2,4],"googleMapsStaticApiKey":"AIzaSyBQdch5IcgcQaKNG76sbMQv1MEBEKLeQ-8","impersonatedSession":false,"demoCollections":[{"collectionId":"56d73fa2c2ea51af9150397a","deleted":true},{"collectionId":"56d73faf07eaa0500957fd07","deleted":true},{"collectionId":"56d73ffc859fd045d0337663","deleted":true},{"collectionId":"56d748f301dbae7a6d77a085","deleted":true},{"collectionId":"56d748fd01dbae7a6d77a0ff","deleted":true},{"collectionId":"56d74904b6aa604e5dddc2d5","deleted":true},{"collectionId":"56d749d9f699bb41e6c05ac0","deleted":true},{"collectionId":"56d74a0145bf212e1e8fda87","deleted":true},{"collectionId":"56d74a4407eaa05009586c60","deleted":true},{"collectionId":"56d74b162b8dde44a009ea5b","deleted":true},{"collectionId":"56d74d8260b5e9a191ff9472","deleted":true},{"collectionId":"56d74e1a859fd045d0340c5a","deleted":true},{"collectionId":"56d74e9d9f7266eea24dcb08","deleted":true},{"collectionId":"56d74fac59827e4e2353b34b","deleted":true},{"collectionId":"56d75559c6fc0864a0e01ca0","deleted":true},{"collectionId":"56d75ee9746fb902cc96143a","deleted":true}],"isFacebookTab":false,"tzData":{"zones":[[-480,"US","P%sT",null]],"rules":{"US":[[1967,2006,null,"Oct","lastSun","2:00","0","S"],[1987,2006,null,"Apr","Sun>=1","2:00","1:00","D"],[2007,"max",null,"Mar","Sun>=8","2:00","1:00","D"],[2007,"max",null,"Nov","Sun>=1","2:00","0","S"]]}}};</script><script type="text/javascript"> SquarespaceFonts.loadViaContext(); Squarespace.load(window);</script><script type="application/ld+json">{"url":"https://www.arctangent.io","name":"Arctangent.io","description":"","image":"//static1.squarespace.com/static/583dc6b829687f52b54693f1/t/583e7981d1758e46ff3ea301/1493003659083/","@context":"http://schema.org","@type":"WebSite"}</script><!--[if gte IE 9]> <link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/583dc6b829687f52b54693f1/8/50521cf884aeb45fa5cfdb80/583dc6b829687f52b54693f7/936-05142015/1486546993988/site.css?&filterFeatures=false&part=1"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/583dc6b829687f52b54693f1/8/50521cf884aeb45fa5cfdb80/583dc6b829687f52b54693f7/936-05142015/1486546993988/site.css?&filterFeatures=false&part=2"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/583dc6b829687f52b54693f1/8/50521cf884aeb45fa5cfdb80/583dc6b829687f52b54693f7/936-05142015/1486546993988/site.css?&filterFeatures=false&part=3"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/583dc6b829687f52b54693f1/8/50521cf884aeb45fa5cfdb80/583dc6b829687f52b54693f7/936-05142015/1486546993988/site.css?&filterFeatures=false&part=4"/><![endif]-->
+<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/583dc6b829687f52b54693f1/8/50521cf884aeb45fa5cfdb80/583dc6b829687f52b54693f7/936-05142015/1486546993988/site.css?&filterFeatures=false&noMedia=true&part=1"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/583dc6b829687f52b54693f1/8/50521cf884aeb45fa5cfdb80/583dc6b829687f52b54693f7/936-05142015/1486546993988/site.css?&filterFeatures=false&noMedia=true&part=2"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/583dc6b829687f52b54693f1/8/50521cf884aeb45fa5cfdb80/583dc6b829687f52b54693f7/936-05142015/1486546993988/site.css?&filterFeatures=false&noMedia=true&part=3"/><link rel="stylesheet" type="text/css" href="//static1.squarespace.com/static/sitecss/583dc6b829687f52b54693f1/8/50521cf884aeb45fa5cfdb80/583dc6b829687f52b54693f7/936-05142015/1486546993988/site.css?&filterFeatures=false&noMedia=true&part=4"/><![endif]-->
+<!--[if !IE]> --><link rel="stylesheet" type="text/css" href="./Initial Asterisk configuration — Arctangent.io_files/site.css"><!-- <![endif]-->
+<script>Static.COOKIE_BANNER_CAPABLE = true;</script>
+<!-- End of Squarespace Headers -->
+  <script src="./Initial Asterisk configuration — Arctangent.io_files/site-bundle.js" type="text/javascript"></script>
+</head>
+
+<body class="show-products-category-navigation   page-borders-thick canvas-style-normal stack-navigation header-subtitle-custom banner-alignment-center blog-layout-center project-layout-left-sidebar thumbnails-on-open-page-show-all social-icon-style-round  hide-info-footer  hide-page-title hide-page-title-underline  hide-article-author   event-show-past-events event-thumbnails event-thumbnail-size-32-standard event-date-label  event-list-show-cats event-list-date event-list-time event-list-address   event-icalgcal-links  event-excerpts  event-item-back-link    product-list-titles-under product-list-alignment-center product-item-size-11-square  product-gallery-size-11-square product-gallery-auto-crop show-product-price show-product-item-nav product-social-sharing newsletter-style-dark hide-opentable-icons opentable-style-dark small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square image-block-poster-text-alignment-center image-block-card-dynamic-font-sizing image-block-card-content-position-center image-block-card-text-alignment-left image-block-overlap-dynamic-font-sizing image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-dynamic-font-sizing image-block-collage-content-position-top image-block-collage-text-alignment-left image-block-stack-dynamic-font-sizing image-block-stack-text-alignment-left button-style-outline button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-type-page collection-layout-default collection-588b03839f7456789fc077b7 mobile-style-available logo-image" id="collection-588b03839f7456789fc077b7">
+
+  <div id="canvas">
+
+    <div id="mobileNav" class="">
+      <div class="wrapper">
+        <nav class="main-nav mobileNav"><ul>
+  
+    
+
+        <li class="blog-collection">
+
+          
+
+            
+              <a href="https://www.arctangent.io/">Dev Blog</a>
+            
+
+            
+
+
+          
+
+        </li>
+
+    
+
+        <li class="page-collection">
+
+          
+
+            
+              <a href="https://www.arctangent.io/build-your-own/">Make Banana Phone</a>
+            
+
+            
+
+
+          
+
+        </li>
+
+    
+
+        <li class="page-collection">
+
+          
+
+            
+              <a href="https://www.arctangent.io/contact/">Contact</a>
+            
+
+            
+
+
+          
+
+        </li>
+
+    
+    
+  
+</ul>
+</nav>
+
+      </div>
+    </div>
+    <div id="mobileMenuLink"><a>Menu</a></div>
+
+    <header id="header" class="clear">
+
+    
+
+      <div id="upper-logo">
+        <h1 class="logo" data-content-field="site-title">
+          <a href="https://www.arctangent.io/"><img src="./Initial Asterisk configuration — Arctangent.io_files/saved_resource" alt="Arctangent.io"></a>
+        </h1>
+      </div>
+      <script>
+      if (parseInt(Y.one('body').getComputedStyle('width'),10) <= 640) {
+        Y.use('squarespace-ui-base', function(Y) {
+          Y.one("#upper-logo .logo").plug(Y.Squarespace.TextShrink, {
+            parentEl: Y.one('#upper-logo')
+          });
+        });
+      }
+      </script>
+
+      
+      <div class="site-info" data-content-field="business-information">
+        <div class="site-address">Street Address</div>
+        <div class="site-city-state">City, State, Zip</div>
+        <div class="site-phone">Phone Number</div>
+      </div>
+      
+
+      <div class="site-tag-line">
+        
+      </div>
+
+      <div class="custom-info">
+        <div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Header Subtitle: Custom Content" data-type="block-field" data-updated-on="1480831935874" id="customInfoBlock"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-81eee4bbda3d9efd0834"><div class="sqs-block-content"><h1 class="text-align-center">Have code. Will travel.</h1></div></div></div></div></div>
+      </div>
+
+      <div id="lower-logo">
+        <h1 class="logo" data-content-field="site-title" data-shrink-original-size="46" style="letter-spacing: 0.0217391em;"><a href="https://www.arctangent.io/"><img src="./Initial Asterisk configuration — Arctangent.io_files/saved_resource" alt="Arctangent.io"></a></h1>
+      </div>
+      <script>
+        Y.use('squarespace-ui-base', function(Y) {
+          Y.one("#lower-logo .logo").plug(Y.Squarespace.TextShrink, {
+            parentEl: Y.one('#lower-logo')
+          });
+        });
+      </script>
+
+    
+      <div id="topNav">
+  <nav class="main-nav" data-content-field="navigation">
+    <ul>
+    
+      
+
+          <li class="blog-collection">
+
+            
+
+              
+                <a href="https://www.arctangent.io/">Dev Blog</a>
+              
+
+              
+
+
+            
+
+          </li>
+
+      
+
+          <li class="page-collection">
+
+            
+
+              
+                <a href="https://www.arctangent.io/build-your-own/">Make Banana Phone</a>
+              
+
+              
+
+
+            
+
+          </li>
+
+      
+
+          <li class="page-collection">
+
+            
+
+              
+                <a href="https://www.arctangent.io/contact/">Contact</a>
+              
+
+              
+
+
+            
+
+          </li>
+
+      
+      
+    
+  </ul>
+  <div class="page-divider"></div>
+  </nav>
+</div>
+
+
+    </header>
+
+    <div class="page-divider top-divider"></div>
+
+    <!-- // page image or divider -->
+    
+      
+        
+      
+    
+
+    <section id="page" class="clear" role="main" data-content-field="main-content" data-collection-id="588b03839f7456789fc077b7" data-edit-main-image="Banner" style="opacity: 1;">
+
+      <!-- // CATEGORY NAV -->
+      
+
+      <div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1486300723367" id="page-588b03839f7456789fc077b7"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-ecee7dab48e290a0a390"><div class="sqs-block-content"><h1 style="margin-left:40px" class="text-align-center">Initial Asterisk configuration</h1></div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_11_1485672668670_14574"><div class="sqs-block-content"><hr></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_11_1485672668670_15684"><div class="sqs-block-content"><p style="margin-left:40px">Asterisk has three main configuration files: asterisk.conf, sip.conf, and extensions.conf. We'll go over their significance one by one. But first, we need to add some more directories to the 'banana' user's home directory. We will tell Asterisk to look for some sound files and the Banana Phone scripts there later.</p><p style="margin-left:40px">Assuming you are logged in as the 'banana' user, move into your home directory and create another directory called 'banana_phone'.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_5_1485548563650_21987"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">cd</span> ~
+mkdir banana_phone
+</pre></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_5_1485548563650_22498"><div class="sqs-block-content"><p style="margin-left: 40px;">Now change into the directory you just made, and make another one called 'asterisk_resources'.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_5_1485548563650_23554"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">cd </span>banana_phone
+mkdir asterisk_resources
+</pre></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_5_1485548563650_24107"><div class="sqs-block-content"><p style="margin-left:40px">Asterisk comes with a set of audio files for things like background music, voicemail beeps and other standard telephone sounds. We will be using our own sound files for Banana Phone, so we will move the contents of the default Asterisk resource directory to the 'banana' user and tell Asterisk to look there for audio files.</p><p style="margin-left:40px">Move into the 'asterisk_resources' directory, and copy all the files from Asterisk's default resource directory into yours. With some bash trickery, we can copy all the files from the default Asterisk resource directory into our own using 'cp -R' and the shell wildcard '.'</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_5_1485548563650_28728"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">cd </span>asterisk_resources
+sudo cp -R /var/lib/asterisk/* .
+</pre></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_5_1485548563650_32371"><div class="sqs-block-content"><p style="margin-left: 40px;">Don't forget to leave a space between '/var/lib/asterisk/*' and '.' or you'll get an error when running the command.</p><p style="margin-left: 40px;">Now we need to change permissions on the newly copied files, as they still belong to the root user.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_5_1485548563650_35666"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">sudo chown -R banana:banana *
+</pre></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_5_1485548563650_36216"><div class="sqs-block-content"><p style="margin-left:40px">We'll now shift focus onto the Asterisk configuration files.</p></div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_4_1485647632739_59455"><div class="sqs-block-content"><hr></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_4_1485647632739_61290"><div class="sqs-block-content"><h2>asterisk.conf</h2><p style="margin-left:40px">This file sets default permissions for sockets, and tells Asterisk where to find resources like sound files and AGI files (AGI is garbage, btw).</p><p style="margin-left:40px">Move into the main Asterisk install directory, rename the default asterisk config file and use 'nano' to open a new file called 'asterisk.conf'. This will replace the one we renamed, and will have a minimal configuration telling Asterisk to look for audio files in our 'banana_phone' directory.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_7_1485548563650_7973"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007020">cd</span> /etc/asterisk
+sudo mv asterisk.conf asterisk.conf.bk
+sudo nano asterisk.conf
+</pre></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_7_1485548563650_8701"><div class="sqs-block-content"><p style="margin-left:40px">Once you've opened up the file for editing, copy the following into the text editor and save:</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_7_1485548563650_17310"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tbody><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #333333">[</span>directories<span style="color: #333333">]</span>
+<span style="color: #996633">astetcdir</span> <span style="color: #333333">=</span> /etc/asterisk
+<span style="color: #996633">astmoddir</span> <span style="color: #333333">=</span> /usr/lib/asterisk/modules
+<span style="color: #996633">astvarlibdir</span> <span style="color: #333333">=</span> /var/lib/asterisk
+<span style="color: #996633">astdbdir</span> <span style="color: #333333">=</span> /var/lib/asterisk
+<span style="color: #996633">astkeydir</span> <span style="color: #333333">=</span> /var/lib/asterisk
+<span style="color: #996633">astdatadir</span> <span style="color: #333333">=</span> /home/banana/banana_phone/asterisk_resources
+<span style="color: #996633">astagidir</span> <span style="color: #333333">=</span> /var/lib/asterisk/agi-bin
+<span style="color: #996633">astspooldir</span> <span style="color: #333333">=</span> /var/spool/asterisk
+<span style="color: #996633">astrundir</span> <span style="color: #333333">=</span> /var/run/asterisk
+<span style="color: #996633">astlogdir</span> <span style="color: #333333">=</span> /var/log/asterisk
+<span style="color: #996633">astsbindir</span> <span style="color: #333333">=</span> /usr/sbin
+
+<span style="color: #333333">[</span>options<span style="color: #333333">]</span>
+; If we want to start Asterisk with a default verbosity <span style="color: #008800; font-weight: bold">for </span>the verbose
+; or debug logger channel types, <span style="color: #008800; font-weight: bold">then </span>we use these settings.
+;<span style="color: #996633">verbose</span> <span style="color: #333333">=</span> 5
+;<span style="color: #996633">debug</span> <span style="color: #333333">=</span> 5
+
+; User and group to run asterisk as. NOTE: This will require changes to
+; directory and device permissions.
+<span style="color: #996633">runuser</span> <span style="color: #333333">=</span> banana	; The user to run as.
+<span style="color: #996633">rungroup</span> <span style="color: #333333">=</span> banana	; The group to run as.
+
+<span style="color: #996633">defaultlanguage</span> <span style="color: #333333">=</span> en
+<span style="color: #996633">documentation_language</span> <span style="color: #333333">=</span> en_US
+</pre></td></tr></tbody></table></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_7_1485548563650_17862"><div class="sqs-block-content"><p style="margin-left:40px">On line 7, we tell Asterisk to look for data resources in the directory we made for the 'banana' user. On lines 22 and 23, we set Asterisk to run as the 'banana' user, because the Asterisk server will be running scripts associated with it.</p></div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_4_1485647632739_61896"><div class="sqs-block-content"><hr></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_4_1485647632739_62869"><div class="sqs-block-content"><h2>sip.conf</h2><p style="margin-left:40px">This file is responsible for defining "SIP endpoints" in Asterisk. That's a fancy way of saying "places where SIP calls should go."</p><p style="margin-left:40px">Consider an endpoint like a single end of a telephone call; on one end there is a phoneline run by the telecom provider, and on the other is the actual phone handset where the call get pushed to. This concept of breaking up a telephone call into sending and receiving parties (FXO and FXS, roughly speaking) is key to how Asterisk makes phone calls happen. The sip.conf file defines SIP endpoints on the Asterisk server.</p><p style="margin-left:40px">We will start by doing the same thing we did for asterisk.conf. Rename the sip.conf file and create our own. Again, make sure you're in the '/etc/asterisk' directory.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_7_1485548563650_25088"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">sudo mv sip.conf sip.conf.bk
+sudo nano sip.conf
+</pre></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_7_1485548563650_32046"><div class="sqs-block-content"><p style="margin-left:40px">Once inside the text editor, copy this configuration into the file and save:</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_7_1485548563650_46021"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tbody><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></td><td><pre style="margin: 0; line-height: 125%">;This section is <span style="color: #008800; font-weight: bold">for </span>general setting of the sip channel
+<span style="color: #333333">[</span>general<span style="color: #333333">]</span>
+<span style="color: #996633">context</span><span style="color: #333333">=</span>unauthenticated          ; default context <span style="color: #008800; font-weight: bold">for </span>incoming calls
+<span style="color: #996633">allowguest</span><span style="color: #333333">=</span>no                    ; disable unauthenticated calls
+<span style="color: #996633">srvlookup</span><span style="color: #333333">=</span>no                     ; disable DNS SRV record lookup on outbound calls
+
+<span style="color: #996633">udpbindaddr</span><span style="color: #333333">=</span>192.168.1.207        ; make it the static IP you <span style="color: #007020">set </span>up on eth0/wlan0
+<span style="color: #996633">tcpenable</span><span style="color: #333333">=</span>no                     
+
+<span style="color: #333333">[</span>PhoneHandset<span style="color: #333333">]</span>
+<span style="color: #996633">username</span><span style="color: #333333">=</span>PhoneHandset
+<span style="color: #996633">secret</span><span style="color: #333333">=</span>n677!hsnl08               ; a unique password <span style="color: #008800; font-weight: bold">for </span>this device
+<span style="color: #007020">type</span><span style="color: #333333">=</span>friend                      ; the channel driver will match on username first
+<span style="color: #996633">context</span><span style="color: #333333">=</span>PhoneHandset             ; where calls from the device will enter the dialplan
+<span style="color: #996633">host</span><span style="color: #333333">=</span>dynamic                     ; the device will register with asterisk
+<span style="color: #996633">dtmfmode</span><span style="color: #333333">=</span>inband               ; accept touch-tones from the devices
+<span style="color: #996633">disallow</span><span style="color: #333333">=</span>all                     ; reset which voice codecs this device will accept
+<span style="color: #996633">allow</span><span style="color: #333333">=</span>g722                       ; audio codecs to accept from, and request to
+<span style="color: #996633">allow</span><span style="color: #333333">=</span>ulaw                       
+<span style="color: #996633">allow</span><span style="color: #333333">=</span>alaw
+
+<span style="color: #333333">[</span>PhoneLine<span style="color: #333333">]</span>
+<span style="color: #996633">username</span><span style="color: #333333">=</span>PhoneLine
+<span style="color: #996633">secret</span><span style="color: #333333">=</span>hj87tbd!i90
+<span style="color: #007020">type</span><span style="color: #333333">=</span>friend
+<span style="color: #996633">context</span><span style="color: #333333">=</span>PhoneLine
+<span style="color: #996633">host</span><span style="color: #333333">=</span>dynamic
+<span style="color: #996633">qualify</span><span style="color: #333333">=</span>yes
+<span style="color: #996633">dtmfmode</span><span style="color: #333333">=</span>inband
+<span style="color: #996633">canreinvite</span><span style="color: #333333">=</span>no
+<span style="color: #996633">disallow</span><span style="color: #333333">=</span>all
+<span style="color: #996633">allow</span><span style="color: #333333">=</span>g722
+<span style="color: #996633">allow</span><span style="color: #333333">=</span>ulaw
+</pre></td></tr></tbody></table></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_7_1485548563650_46596"><div class="sqs-block-content"><p style="margin-left:40px">There is a lot going on here, so we'll focus on the important key words and what they mean.</p><p style="margin-left:40px">Line 2 is the "general" settings for the SIP part of the Asterisk server. The "context" keyword in line 3 defines the default endpoint to route calls to. We'll go into what exactly Contexts are in Asterisk, so for now, just copy it and move on.</p><p style="margin-left:40px">Line 7 defines the IP address that Asterisk will be listening for calls on. Set this to the static IP on your RPi.</p><p style="margin-left:40px">Line 10 starts the definition of the first SIP endpoint, called "PhoneHandset." This endpoint will associate the actual phone with our Asterisk system. All the keywords/values following after that pertain to that endpoint. We'll go through these keywords.</p><ul><li><strong>username</strong> - this is exactly what it sounds like. This username is associated with this endpoint and is used with a password to tie calling devices (like our ATA later on) to Asterisk.</li><li><strong>secret </strong>- the password that the username will authenticate with. Think of a good secure one, or use this command to generate one for you:</li></ul></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_12_1486061764369_31870"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">openssl rand -base64 11
+</pre></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_12_1486061764369_33204"><div class="sqs-block-content"><ul><li><strong>type</strong> - Asterisk users have three types:<ul><li>user - can make calls from Asterisk</li><li>peer - can send calls to Asterisk, an exampke would be like a 3rd party VoIP provider you could have a SIP phone number with</li><li>friend - is both a peer and a user, so they can send and receive calls from Asterisk</li></ul></li></ul><p style="margin-left:120px">In this case, our PhoneHandset is a friend type. Clearly.</p><ul><li><strong>context </strong>- the default "landing spot" for calls originating from this endpoint. This will make sense when we cover dialplan basics.</li><li><strong>host </strong>- specifies the IP or hostname of the SIP peer or user. It can be a server name or an IP or dynamic. Dynamic means that the SIP peer/user needs to register with the server before calls can be made.&nbsp;</li><li><strong>qualify</strong> - Tell Asterisk to periodically check to see if the peer/user is up and able to handle calls.</li><li><strong>dtmfmode</strong> - DTMF signals are the formal name for the dial pad buttons (0-9, #,*) that are one all phones.&nbsp; We'll set this to inband.</li><li><strong>disallow, allow</strong> - these pertain to the audio codecs to be used during phone calls. It starts by disalloing all of them, then allowing g722, ulaw and alaw. For more information on the codecs, see <a href="http://www.voip-info.org/wiki/view/Asterisk+codecs+allow">http://www.voip-info.org/wiki/view/Asterisk+codecs+allow</a></li></ul><p style="margin-left:40px">On line 23, we create another endpoint and name it "PhoneLine." This endpoint will be associated with the phoneline coming into the Asterisk system.&nbsp;</p><p style="margin-left:40px">These usernames and passwords defined in sip.conf will be used by the Obi110 ATA to tie in our phoneline and handset to the Asterisk server over the local network.</p></div></div><div class="sqs-block horizontalrule-block sqs-block-horizontalrule" data-block-type="47" id="block-yui_3_17_2_4_1485647632739_63425"><div class="sqs-block-content"><hr></div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_4_1485647632739_64370"><div class="sqs-block-content"><h2>extensions.conf</h2><p style="margin-left:40px">This file is the core of Asterisk functionality. Using the Asterisk Extension Language(AEL), you can manipulate calls coming into the server to do all sorts of things, like interactive voice menus, database lookups on incoming caller IDs (<em>hint</em>) and other arbitrary logic. A collection of AEL commands for call processing is called a dialplan.</p><p style="margin-left:40px">Repeat the steps we did for asterisk.conf and sip.conf, renaming the defaults and making our own.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_4_1485647632739_45979"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">sudo mv extensions.conf extensions.conf.bk
+sudo nano extensions.conf
+</pre></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_4_1485647632739_46960"><div class="sqs-block-content"><p style="margin-left:40px">For now, we will insert a very generic dialplan into extensions.conf and then save:</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_4_1485647632739_47509"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tbody><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #333333">[</span>general<span style="color: #333333">]</span> 
+<span style="color: #996633">exten</span> <span style="color: #333333">=</span>&gt; _X.,1,Answer<span style="color: #333333">()</span>
+    <span style="color: #996633">same</span> <span style="color: #333333">=</span>&gt; n,NoOp<span style="color: #333333">(</span><span style="background-color: #fff0f0">"generic catch-all extension"</span><span style="color: #333333">)</span>
+    <span style="color: #996633">same</span> <span style="color: #333333">=</span>&gt; n,NoOp<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">${</span><span style="color: #996633">EXTEN</span><span style="color: #008800; font-weight: bold">}</span><span style="color: #333333">)</span>
+    <span style="color: #996633">same</span> <span style="color: #333333">=</span>&gt; n,HangUp<span style="color: #333333">()</span>
+
+<span style="color: #333333">[</span>PhoneLine<span style="color: #333333">]</span>
+<span style="color: #996633">exten</span> <span style="color: #333333">=</span>&gt; _X.,1,Answer<span style="color: #333333">()</span>
+    <span style="color: #996633">same</span> <span style="color: #333333">=</span>&gt; n,NoOp<span style="color: #333333">(</span><span style="background-color: #fff0f0">"in PhoneLine extension"</span><span style="color: #333333">)</span>
+    <span style="color: #996633">same</span> <span style="color: #333333">=</span>&gt; n,NoOp<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">${</span><span style="color: #996633">EXTEN</span><span style="color: #008800; font-weight: bold">}</span><span style="color: #333333">)</span>
+    <span style="color: #996633">same</span> <span style="color: #333333">=</span>&gt; n,HangUp<span style="color: #333333">()</span>
+
+<span style="color: #333333">[</span>PhoneHandset<span style="color: #333333">]</span>
+<span style="color: #996633">exten</span> <span style="color: #333333">=</span>&gt; _X.,1,Answer<span style="color: #333333">()</span>
+    <span style="color: #996633">same</span> <span style="color: #333333">=</span>&gt; n,NoOp<span style="color: #333333">(</span><span style="background-color: #fff0f0">"in PhoneHandset extension"</span><span style="color: #333333">)</span>
+    <span style="color: #996633">same</span> <span style="color: #333333">=</span>&gt; n,NoOp<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">${</span><span style="color: #996633">EXTEN</span><span style="color: #008800; font-weight: bold">}</span><span style="color: #333333">)</span>
+    <span style="color: #996633">same</span> <span style="color: #333333">=</span>&gt; n,HangUp<span style="color: #333333">()</span>
+</pre></td></tr></tbody></table></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_4_1485647632739_48108"><div class="sqs-block-content"><p style="margin-left:40px">None of this is supposed to make sense yet. We'll go over this dialplan and get familiar with the Extension language later on. To finish out our Asterisk configs, change the owner of all the files in the directory to the 'asterisk' user.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_11_1485672668670_28528"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">sudo chown asterisk:asterisk *.conf
+</pre></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_11_1485672668670_29654"><div class="sqs-block-content"><p style="margin-left:40px">We really only needed to chown the 3 files we added, but that was faster and all files in this directory should be owned by 'asterisk' anyways.</p><p style="margin-left:40px">Once all our new conf files are in place, restart the Asterisk server.</p></div></div><div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_6_1485719536444_17708"><div class="sqs-block-content"><!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">sudo /etc/init.d/asterisk restart
+</pre></div>
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_6_1485719536444_18279"><div class="sqs-block-content"><p style="margin-left:40px">Now that Asterisk is configured, we move onto installing the Obi110 ATA.</p><h2 class="text-align-right" style="margin-left: 40px;"><a href="https://www.arctangent.io/obi110-ata">-&gt; Next section: Obi110 ATA settings</a></h2></div></div></div></div></div>
+
+    </section>
+
+    <div class="sqs-layout sqs-grid-12 columns-12 empty" data-layout-label="Initial Asterisk configuration Footer Content" data-type="block-field" id="collection-588b03839f7456789fc077b7"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+
+    <!-- <div class="page-divider bottom-divider"></div> -->
+
+    <div class="info-footer-wrapper clear">
+      <div class="info-footer">
+      <div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Info Footer Content" data-type="block-field" data-updated-on="1411670375842" id="infoFooterBlock"><div class="row sqs-row"><div class="col sqs-col-12 span-12"></div></div></div>
+      
+        
+        <div id="socialLinks" class="social-links sqs-svg-icon--list" data-content-field="connected-accounts">
+          
+  <a href="https://www.facebook.com/276074649187125" target="_blank" class="sqs-svg-icon--wrapper facebook">
+    <div>
+      <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+        <use class="sqs-use--icon" xlink:href="#facebook-icon"></use>
+        <use class="sqs-use--mask" xlink:href="#facebook-mask"></use>
+      </svg>
+    </div>
+  </a>
+
+        </div>
+        
+      
+      </div>
+    </div>
+
+    <footer id="footer" class="clear">
+      <div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Footer Content" data-type="block-field" data-updated-on="1486426110661" id="footerBlock"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_39_1486061764369_4332"><div class="sqs-block-content"><p class="text-align-center">Follow the project on Facebook</p></div></div><div class="sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2" data-block-type="54" id="block-yui_3_17_2_7_1486423094319_8913"><div class="sqs-block-content">
+
+<div class="sqs-svg-icon--outer social-icon-alignment-center social-icons-color-black social-icons-size-medium social-icons-style-regular ">
+  <nav class="sqs-svg-icon--list">
+    <a href="https://www.facebook.com/276074649187125" target="_blank" class="sqs-svg-icon--wrapper facebook">
+      <div>
+        <svg class="sqs-svg-icon--social" viewBox="0 0 64 64">
+          <use class="sqs-use--icon" xlink:href="#facebook-icon"></use>
+          <use class="sqs-use--mask" xlink:href="#facebook-mask"></use>
+        </svg>
+      </div>
+    </a>
+  </nav>
+</div></div></div></div></div></div>
+    </footer>
+
+  </div>
+
+  <div></div>
+
+  <script type="text/javascript" data-sqs-type="imageloader-bootstrapper">(function() {if(window.ImageLoader) { window.ImageLoader.bootstrap({}, document); }})();</script><script>Squarespace.afterBodyLoad(Y);</script><div class="absolute-cart-box" id="yui_3_17_2_1_1546885832286_125"><div id="yui_3_17_2_1_1546885832286_129" class="yui3-widget sqs-widget sqs-pill-shopping-cart sqs-scalable-hidden" style="visibility: hidden; opacity: 0; transform: scale(0.94);"><div id="yui_3_17_2_1_1546885832286_131" class="sqs-pill-shopping-cart-content dark" data-test="continue-to-cart"><div class="icon"></div>
+
+<div class="details">
+  <span class="total-quantity">0</span>
+  <span class="suffix">items</span>
+</div>
+
+<span class="subtotal">
+  <span class="price">$0</span>
+</span></div></div></div><svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none"><symbol id="facebook-icon" viewBox="0 0 64 64"><path d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"></path></symbol><symbol id="facebook-mask" viewBox="0 0 64 64"><path d="M0,0v64h64V0H0z M39.6,22l-2.8,0c-2.2,0-2.6,1.1-2.6,2.6V28h5.3l-0.7,5.3h-4.6V47h-5.5V33.3H24V28h4.6V24 c0-4.6,2.8-7,6.9-7c2,0,3.6,0.1,4.1,0.2V22z"></path></symbol></svg>
+
+
+
+
+
+
+</body></html>
