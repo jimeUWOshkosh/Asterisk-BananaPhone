@@ -1,0 +1,24 @@
+brownie*CLI> sip show peers
+Name/username             Host                                    Dyn Forcerport Comedia    ACL Port     Status      Description
+PhoneHandset/PhoneHandset 192.168.0.20                             D  Yes        Yes            5060     Unmonitored       
+PhoneLine/PhoneLine       192.168.0.20                             D  Yes        Yes            5061     OK (3 ms)         
+2 sip peers [Monitored: 1 online, 0 offline Unmonitored: 1 online, 0 offline]
+  == Using SIP RTP TOS bits 184
+  == Using SIP RTP CoS mark 5
+    -- Executing [9208675309@PhoneLine:1] Answer("SIP/PhoneLine-00000002", " 1000 ") in new stack
+    -- Executing [9208675309@PhoneLine:2] NoOp("SIP/PhoneLine-00000002", "PhoneLine") in new stack
+    -- Executing [9208675309@PhoneLine:3] Set("SIP/PhoneLine-00000002", "Result=PREAPPROVED") in new stack
+    -- Executing [9208675309@PhoneLine:4] NoOp("SIP/PhoneLine-00000002", "Result: PREAPPROVED") in new stack
+    -- Executing [9208675309@PhoneLine:5] GotoIf("SIP/PhoneLine-00000002", "0?captcha") in new stack
+    -- Executing [9208675309@PhoneLine:6] GotoIf("SIP/PhoneLine-00000002", "0?DialMandD") in new stack
+    -- Executing [9208675309@PhoneLine:7] GotoIf("SIP/PhoneLine-00000002", "0?helloitsme") in new stack
+    -- Executing [9208675309@PhoneLine:8] GotoIf("SIP/PhoneLine-00000002", "1?DialMandD") in new stack
+    -- Goto (PhoneLine,9208675309,24)
+    -- Executing [9208675309@PhoneLine:24] NoOp("SIP/PhoneLine-00000002", "Dial Mom and Dad") in new stack
+    -- Executing [9208675309@PhoneLine:25] System("SIP/PhoneLine-00000002", "echo '7158675309 - Wireless WI - ' `date`  >> /var/log/asterisk/preapproved") in new stack
+    -- Executing [9208675309@PhoneLine:26] Dial("SIP/PhoneLine-00000002", "SIP/PhoneHandset") in new stack
+  == Using SIP RTP TOS bits 184
+  == Using SIP RTP CoS mark 5
+    -- Called SIP/PhoneHandset
+    -- SIP/PhoneHandset-00000003 is ringing
+  == Spawn extension (PhoneLine, 9208675309, 26) exited non-zero on 'SIP/PhoneLine-00000002'
