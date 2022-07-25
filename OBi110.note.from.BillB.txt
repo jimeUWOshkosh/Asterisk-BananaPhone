@@ -1,0 +1,4 @@
+NOTE:  I added “ph,” in front of the “SP2(xxxxxxxxxx)” (don’t include the quotes,
+but the comma is important) so that both the phone and the PBX are “rung” at the
+same time; so in case the PBX doesn’t answer, a call won’t be missed (trusting, eh?).
+Don’t forget to “Submit” each page before going to the next one.
