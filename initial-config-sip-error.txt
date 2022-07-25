@@ -1,0 +1,8 @@
+chan_sip.c:28800 handle_request_subscribe: Received SIP subscribe for peer without mailbox: PhoneHandset
+
+Declared a mailbox in sip_custom.conf for the PhoneHandset
+definition.
+
+[PhoneHandset]
+...
+mailbox=root@localhost
